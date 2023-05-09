@@ -252,12 +252,7 @@ Resultados consulta SELECT * FROM "paises" where country='"Colombia"';
 
 ¿Qué cambios observa? Incluya la respuesta en su documento de entrega.
 
-Luego de los cambios realizados se obtienen los siguientes resultados:
-
-![Descripción de los campos de la tabla](/Taller11/Image/25.png)
-![Descripción de los campos de la tabla](/Taller11/Image/26.png)
-
-10. Note que ahora puede ejecutar la consulta con una ligera modificación
+Note que ahora puede ejecutar la consulta con una ligera modificación
 
     SELECT * FROM "paises" where country='Colombia';
 
