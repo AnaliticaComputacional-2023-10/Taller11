@@ -51,7 +51,7 @@
 
 Los datos encontrados en el archivo son:
 
-![Descripción de los campos de la tabla](/Taller11/Image/1.png)
+![Descripción de los campos de la tabla](/Image/1.png)
 
 5. Note que los códigos de los países están en formato ISO Alpha-2.
 
@@ -63,11 +63,11 @@ Los datos encontrados en el archivo son:
 
 Archivo datos de COVID:
 
-![Descripción de los campos de la tabla](/Taller11/Image/2.png)
+![Descripción de los campos de la tabla](/Image/2.png)
 
 Archivo códigos de paises:
 
-![Descripción de los campos de la tabla](/Taller11/Image/3.png)
+![Descripción de los campos de la tabla](/Image/3.png)
 
 ## Configure buckets en S3
 
@@ -89,7 +89,7 @@ Archivo códigos de paises:
 
 6. Tome un pantallazo de sus buckets e inclúyalo en su reporte.
 
-![Descripción de los campos de la tabla](/Taller11/Image/4.png)
+![Descripción de los campos de la tabla](/Image/4.png)
 
 ## Conecte los datos con Athena usando Glue
 
@@ -115,9 +115,9 @@ Archivo códigos de paises:
 
 Algunas de las opciones que datos que se pueden incluir son las siguiente:
 
-![Descripción de los campos de la tabla](/Taller11/Image/5.png)
-![Descripción de los campos de la tabla](/Taller11/Image/6.png)
-![Descripción de los campos de la tabla](/Taller11/Image/7.png)
+![Descripción de los campos de la tabla](/Image/5.png)
+![Descripción de los campos de la tabla](/Image/6.png)
+![Descripción de los campos de la tabla](/Image/7.png)
 
 11. Seleccione S3 - AWS Glue Data catalog como fuente de datos. Click en Next.
 
@@ -163,20 +163,20 @@ Algunas de las opciones que datos que se pueden incluir son las siguiente:
 
 Las opciones presentadas para el Crawler schedule - Frequency son las siguientes:
 
-![Descripción de los campos de la tabla](/Taller11/Image/8.png)
+![Descripción de los campos de la tabla](/Image/8.png)
 
 32. Revise la configuración del crawler, tome un pantallazo, inclúyalo en su reporte, y click en Create Crawler.
 
 Revisión de la configuración para el **crawler.juliana-covid**
 
-![Descripción de los campos de la tabla](/Taller11/Image/9.png)
-![Descripción de los campos de la tabla](/Taller11/Image/10.png)
+![Descripción de los campos de la tabla](/Image/9.png)
+![Descripción de los campos de la tabla](/Image/10.png)
 
 33. Repita los pasos anteriores para agregar un nuevo crawler para el archivo de países. Como nombre utilice sunombre-paises, sin tilde. Para el output, seleccione la misma base de datos del primer crawler, i.e., sunombre-covid-db.
 
 Revisión de la configuración para el **crawler.juliana-paises**
 
-![Descripción de los campos de la tabla](/Taller11/Image/11.png)
+![Descripción de los campos de la tabla](/Image/11.png)
 
 34. Una vez tenga los dos crawlers creados, vuelva a la consola de AWS Glue, seleccione cada uno y click en Run Crawler para ejecutarlos. Esta operación tardará un poco.
 
@@ -186,17 +186,17 @@ Revisión de la configuración para el **crawler.juliana-paises**
 
 Las tablas creadas se muestran a continuación:
 
-![Descripción de los campos de la tabla](/Taller11/Image/12.png)
+![Descripción de los campos de la tabla](/Image/12.png)
 
 **Esquema tabla covid:**
 
-![Descripción de los campos de la tabla](/Taller11/Image/13.png)
-![Descripción de los campos de la tabla](/Taller11/Image/14.png)
+![Descripción de los campos de la tabla](/Image/13.png)
+![Descripción de los campos de la tabla](/Image/14.png)
 
 **Esquema tabla paises:**
 
-![Descripción de los campos de la tabla](/Taller11/Image/15.png)
-![Descripción de los campos de la tabla](/Taller11/Image/16.png)
+![Descripción de los campos de la tabla](/Image/15.png)
+![Descripción de los campos de la tabla](/Image/16.png)
 
 37. Note que las tablas creadas tienen los nombres de las carpetas que creó en S3, mientras la base de datos tiene el nombre especificado en el Crawler.
 
@@ -220,23 +220,23 @@ y ejecútelas con Run.
 
 Resultados consulta SELECT * FROM "covid" limit 10;
 
-![Descripción de los campos de la tabla](/Taller11/Image/17.png)
-![Descripción de los campos de la tabla](/Taller11/Image/18.png)
+![Descripción de los campos de la tabla](/Image/17.png)
+![Descripción de los campos de la tabla](/Image/18.png)
 
 Resultados consulta SELECT * FROM "paises" limit 10;
 
-![Descripción de los campos de la tabla](/Taller11/Image/19.png)
-![Descripción de los campos de la tabla](/Taller11/Image/20.png)
+![Descripción de los campos de la tabla](/Image/19.png)
+![Descripción de los campos de la tabla](/Image/20.png)
 
 Resultados consulta SELECT * FROM "covid" where country='Colombia';
 
-![Descripción de los campos de la tabla](/Taller11/Image/21.png)
-![Descripción de los campos de la tabla](/Taller11/Image/22.png)
+![Descripción de los campos de la tabla](/Image/21.png)
+![Descripción de los campos de la tabla](/Image/22.png)
 
 Resultados consulta SELECT * FROM "paises" where country='"Colombia"';
 
-![Descripción de los campos de la tabla](/Taller11/Image/23.png)
-![Descripción de los campos de la tabla](/Taller11/Image/24.png)
+![Descripción de los campos de la tabla](/Image/23.png)
+![Descripción de los campos de la tabla](/Image/24.png)
 
 5. En la tabla paises los nombres de los campos son un poco largos. Para modificarlos, vaya a AWS Glue, seleccione la tabla (click en el nombre de la tabla) y en Actions click en Edit schema. Allí sobre cada nombre de campo de doble click y haga los cambios apropiados. Por ejemplo quite “code” de “alpha-2 code” o “(average)” de “latitude (average)”. Click en Save as new table version.
 
@@ -254,15 +254,15 @@ Resultados consulta SELECT * FROM "paises" where country='"Colombia"';
 
 Luego de los cambios realizados se obtienen los siguientes resultados:
 
-![Descripción de los campos de la tabla](/Taller11/Image/25.png)
-![Descripción de los campos de la tabla](/Taller11/Image/26.png)
+![Descripción de los campos de la tabla](/Image/25.png)
+![Descripción de los campos de la tabla](/Image/26.png)
 
 10. Note que ahora puede ejecutar la consulta con una ligera modificación
 
     SELECT * FROM "paises" where country='Colombia';
 
-![Descripción de los campos de la tabla](/Taller11/Image/27.png)
-![Descripción de los campos de la tabla](/Taller11/Image/28.png)
+![Descripción de los campos de la tabla](/Image/27.png)
+![Descripción de los campos de la tabla](/Image/28.png)
 
 11. Realice un join entre las dos tablas con el siguiente comando
 
@@ -274,5 +274,5 @@ LIMIT 5;
 
 La anterior consulta da como respuesta:
 
-![Descripción de los campos de la tabla](/Taller11/Image/29.png)
-![Descripción de los campos de la tabla](/Taller11/Image/30.png)
+![Descripción de los campos de la tabla](/Image/29.png)
+![Descripción de los campos de la tabla](/Image/30.png)
