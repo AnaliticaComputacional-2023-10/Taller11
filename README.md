@@ -1,6 +1,6 @@
 # Taller 11
 
-### Data Lake: S3 + Glue + Atena
+### ETLs y Lagos de datos
 
 ##### Analítica Computacional para la Toma de Decisiones
 
