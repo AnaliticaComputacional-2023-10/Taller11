@@ -276,3 +276,7 @@ La anterior consulta da como respuesta:
 
 ![Descripción de los campos de la tabla](/Image/29.png)
 ![Descripción de los campos de la tabla](/Image/30.png)
+
+Este código en SQL realiza una combinación (JOIN) entre dos tablas: "covid" y "paises", basándose en la igualdad de los valores de la columna "country" en ambas tablas.
+
+La cláusula "AS" se utiliza para darle un alias a las tablas "covid" y "paises", y la cláusula "LIMIT" se utiliza para limitar el resultado a los primeros 5 registros.
