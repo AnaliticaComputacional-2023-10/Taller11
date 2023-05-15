@@ -51,7 +51,7 @@ Para este taller usaremos datos de Covid publicados por la OMS.
 
 ### 2.
 
-Visite la página https://covid19.who.int/info/. Navegue a Data y luego a Data Download.
+Visite la página https://covid19.who.int/info/. Navegue a `Data` y luego a `Data Download`.
 
 ---
 
@@ -117,7 +117,7 @@ En la consola de Amazon AWS, vaya al servicio S3.
 
 ### 2.
 
-Cree un bucket que servirá para los datos de entrada de su Data lake. Como referencia aquí lo llamaremos bucket de entrada.
+**Cree un bucket** que servirá para los datos de entrada de su Data lake. Como referencia aquí lo llamaremos bucket de entrada.
 
 Bucket de entrada: **bucketentradajs**
 
@@ -125,13 +125,13 @@ Bucket de entrada: **bucketentradajs**
 
 ### 3.
 
-En este bucket cree una carpeta en la raiz del bucket para los datos de covid, puede llamarse covid. Suba allí el archivo WHO-COVID-19-global-table-data.csv.
+En este bucket cree una carpeta en la raiz del bucket para los datos de covid, puede llamarse covid. Suba allí el archivo `WHO-COVID-19-global-table-data.csv`.
 
 ---
 
 ### 4.
 
-Cree otra carpeta en la raíz del bucket para los datos de codigos, puede llamarse paises. Suba allí el archivo countries_codes_and_coordinates.csv.
+Cree otra carpeta en la raíz del bucket para los datos de codigos, puede llamarse paises. Suba allí el archivo `countries_codes_and_coordinates.csv`.
 
 ---
 
@@ -159,7 +159,7 @@ Tome un pantallazo de sus buckets e inclúyalo en su reporte.
 
 ### 1.
 
-En la consola de Amazon AWS, vaya al servicio Athena.
+En la consola de Amazon AWS, vaya al servicio `Athena`.
 
 ---
 
@@ -171,43 +171,43 @@ Athena es un servicio que permite consultar datos almacenamos en S3 usando el le
 
 ### 3.
 
-En el panel izquierdo seleccione Workgroups.
+En el panel izquierdo seleccione `Workgroups`.
 
 ---
 
 ### 4.
 
-Click en Create workgroup. Como nombre del Workgroup use su (primer) nombre (sin repetir existentes).
+Click en `Create workgroup`. Como nombre del Workgroup use su (primer) nombre (sin repetir existentes).
 
 ---
 
 ### 5.
 
-Como motor de analítica (analytics engine) seleccione Athena SQL. Note que la alternativa es Apache Spark.
+Como motor de analítica (analytics engine) seleccione `Athena SQL`. Note que la alternativa es Apache Spark.
 
 ---
 
 ### 6.
 
-En la sección Query result configuration, diligencie el primer campo Location of the query result usando el botón Browse S3 y seleccione el bucket de salida que creó.
+En la sección `Query result configuration`, diligencie el primer campo `Location of the query result` usando el botón `Browse S3` y seleccione el bucket de salida que creó.
 
 ---
 
 ### 7.
 
-Deje los demás campos en sus valores por defecto. Click en Create workgroup en la parte inferior.
+Deje los demás campos en sus valores por defecto. Click en `Create workgroup` en la parte inferior.
 
 ---
 
 ### 8.
 
-De regreso en la consola de Athena, en el panel izquierdo seleccione el ítem Data Sources.
+De regreso en la consola de Athena, en el panel izquierdo seleccione el ítem `Data Sources`.
 
 ---
 
 ### 9.
 
-Click en Create Data Source para crear una nueva fuente de datos para consultar.
+Click en `Create Data Source` para crear una nueva fuente de datos para consultar.
 
 ---
 
@@ -225,7 +225,7 @@ Algunas de las opciones que datos que se pueden incluir son las siguiente:
 
 ### 11.
 
-Seleccione S3 - AWS Glue Data catalog como fuente de datos. Click en Next.
+Seleccione `S3 - AWS Glue Data catalog` como fuente de datos. Click en Next.
 
 ---
 
@@ -243,13 +243,13 @@ Glue apoya los procesos de ETL y ELT (extracción, transformación, carga) al co
 
 ### 14.
 
-Seleccione AWS Glue Data catalog in this account ya que el catálogo se construirá en la misma cuenta.
+Seleccione `AWS Glue Data catalog` in this account ya que el catálogo se construirá en la misma cuenta.
 
 ---
 
 ### 15.
 
-En el método para crear tablas seleccione Create a crawler in AWS Glue.
+En el método para crear tablas seleccione `Create a crawler in AWS Glue`.
 
 ---
 
@@ -261,7 +261,7 @@ El Crawler se encargará de recorrer los datos e identificar los campos, tipos, 
 
 ### 17.
 
-Click en Create in AWS Glue.
+Click en `Create in AWS Glue`.
 
 ---
 
@@ -273,13 +273,13 @@ Esto lo llevará a la consola de AWS Glue en una nueva pestaña del navegador.
 
 ### 19.
 
-En el panel izquierdo seleccione Crawlers (Rastreadores).
+En el panel izquierdo seleccione `Crawlers` (Rastreadores).
 
 ---
 
 ### 20.
 
-Click en Create crawler.juan
+Click en `Create crawler`.
 
 ---
 
@@ -291,25 +291,25 @@ Ingrese un nombre para el crawler, use su primer nombre-covid. Click en Siguient
 
 ### 22.
 
-Selecciones Not yet para indicar que los datos no han sido mapeados a tablas de Glue.
+Selecciones `Not yet` para indicar que los datos no han sido mapeados a tablas de Glue.
 
 ---
 
 ### 23.
 
-Click en Add a data source. Como fuente seleccione S3, con la opción in this account pues es un bucket S3 en la misma cuenta.
+Click en `Add a data source`. Como fuente seleccione S3, con la opción in this account pues es un bucket S3 en la misma cuenta.
 
 ---
 
 ### 24.
 
-Use el botón Browse S3 para seleccionar el bucket de entrada y la carpeta covid. Click en Choose.
+Use el botón `Browse S3` para seleccionar el bucket de entrada y la carpeta covid. Click en Choose.
 
 ---
 
 ### 25.
 
-Mantenga las demás opciones en sus valores por defecto y click en Add an S3 data source.
+Mantenga las demás opciones en sus valores por defecto y click en `Add an S3 data source`.
 
 ---
 
@@ -321,7 +321,7 @@ Click en Next.
 
 ### 27.
 
-En Choose an IAM role/Elija un rol de IAM, seleccione el LabRole.
+En `Choose an IAM role`/Elija un rol de IAM, seleccione el `LabRole`.
 
 ---
 
@@ -333,7 +333,7 @@ Click en Next/Siguiente.
 
 ### 29.
 
-En Target database seleccione Add database/Añadir una base de datos para crear una nueva base de datos (se abre una nueva pestaña). Defina un nombre, usando su primer nombre-covid-bd, sin tildes, deje los demás campos vacíos y click en Create database/Crear.
+En `Target database` seleccione `Add database`/Añadir una base de datos para crear una nueva base de datos (se abre una nueva pestaña). Defina un nombre, usando su primer nombre-covid-bd, sin tildes, deje los demás campos vacíos y click en `Create database`/Crear.
 
 ---
 
@@ -345,7 +345,7 @@ Regrese a la configuración del Crawler, refreque la lista de bases de datos y s
 
 ### 31.
 
-En Crawler schedule - Frequency seleccione On demand. En su reporte incluya algunas de las demás opciones (en un pantallazo). Click en Next/Siguiente.
+En `Crawler schedule - Frequency` seleccione `On demand`. En su reporte incluya algunas de las demás opciones (en un pantallazo). Click en Next/Siguiente.
 
 Las opciones presentadas para el Crawler schedule - Frequency son las siguientes:
 
@@ -426,7 +426,7 @@ Regrese a la consola de Athena.
 
 ### 2.
 
-En el Editor query seleccione su Workgroup (con el nombre definido arriba), como Data source un AwsDataCatalog y como Database la base de datos creada sunombre-covid-db.
+En el Editor query seleccione su `Workgroup` (con el nombre definido arriba), como `Data source` un `AwsDataCatalog` y como `Database` la base de datos creada sunombre-covid-db.
 
 ---
 
@@ -449,22 +449,38 @@ y ejecútelas con `Run`.
 
 Revise los resultados y guarde un pantallazo de cada en su reporte.
 
-Resultados consulta SELECT \* FROM "covid" limit 10;
+Resultados consulta
+
+```sql
+SELECT * FROM "covid" limit 10;
+```
 
 ![Descripción de los campos de la tabla](/Image/17.png)
 ![Descripción de los campos de la tabla](/Image/18.png)
 
-Resultados consulta SELECT \* FROM "paises" limit 10;
+Resultados consulta
+
+```sql
+SELECT * FROM "paises" limit 10;
+```
 
 ![Descripción de los campos de la tabla](/Image/19.png)
 ![Descripción de los campos de la tabla](/Image/20.png)
 
-Resultados consulta SELECT \* FROM "covid" where country='Colombia';
+Resultados consulta
+
+```sql
+SELECT* FROM "covid" where country='Colombia';
+```
 
 ![Descripción de los campos de la tabla](/Image/21.png)
 ![Descripción de los campos de la tabla](/Image/22.png)
 
-Resultados consulta SELECT \* FROM "paises" where country='"Colombia"';
+Resultados consulta
+
+```sql
+SELECT \* FROM "paises" where country='"Colombia"';
+```
 
 ![Descripción de los campos de la tabla](/Image/23.png)
 ![Descripción de los campos de la tabla](/Image/24.png)
@@ -473,19 +489,19 @@ Resultados consulta SELECT \* FROM "paises" where country='"Colombia"';
 
 ### 5.
 
-En la tabla paises los nombres de los campos son un poco largos. Para modificarlos, vaya a AWS Glue, seleccione la tabla (click en el nombre de la tabla) y en Actions click en Edit schema. Allí sobre cada nombre de campo de doble click y haga los cambios apropiados. Por ejemplo quite “code” de “alpha-2 code” o “(average)” de “latitude (average)”. Click en Save as new table version.
+En la tabla paises los nombres de los campos son un poco largos. Para modificarlos, vaya a AWS Glue, seleccione la tabla (click en el nombre de la tabla) y en Actions click en `Edit schema`. Allí sobre cada nombre de campo de doble click y haga los cambios apropiados. Por ejemplo quite “code” de “alpha-2 code” o “(average)” de “latitude (average)”. Click en Save as new table version.
 
 ---
 
 ### 6.
 
-Note que en la tabla paises, los campos vienen con comillas dobles. Para quitarlos e interpretarlos como parte del formato, vaya a AWS Glue, seleccione la tabla y en Actions click en Edit table.
+Note que en la tabla paises, los campos vienen con comillas dobles. Para quitarlos e interpretarlos como parte del formato, vaya a AWS Glue, seleccione la tabla y en Actions click en `Edit table`.
 
 ---
 
 ### 7.
 
-Cambie el Serde serialization lib por org.apache.hadoop.hive.serde2.OpenCSVSerde. En los campos Serde parameters incluya la llave escapeChar con valor ∖, y la llave quoteChar con valor “.
+Cambie el Serde serialization lib por org.apache.hadoop.hive.serde2.OpenCSVSerde. En los campos Serde parameters incluya la llave escapeChar con valor ∖, y la llave quoteChar con valor ".
 
 ---
 
